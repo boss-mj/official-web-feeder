@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Feeder App - Official Download</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316', // Orange
+                            600: '#ea580c',
+                            900: '#7c2d12',
+                        },
+                        navy: {
+                            800: '#1e293b', // BlueGrey
+                            900: '#0f172a',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar for a polished feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-orange-400 rounded-xl flex items-center justify-center text-white shadow-lg shadow-orange-500/30">
+                        <i class="ph-bold ph-barn text-2xl"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-navy-900">Smart Feeder</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition-colors">Features</a>
+                    <a href="#install" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition-colors">How to Install</a>
+                    <a href="#download" class="px-6 py-2.5 bg-navy-900 text-white text-sm font-semibold rounded-full hover:bg-navy-800 transition-all shadow-md shadow-navy-900/20 active:scale-95 flex items-center gap-2">
+                        <i class="ph-bold ph-download-simple"></i>
+                        Get APK
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Decorative background blobs -->
+        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-brand-500/10 blur-[80px]"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Text -->
+                <div class="max-w-2xl animate-fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-sm font-medium mb-6">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                        </span>
+                        Version 1.0 Available Now
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6 tracking-tight">
+                        The ultimate control for your <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-orange-400">Poultry Farm.</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Monitor feed levels with laser precision, track water reservoirs, and schedule automated feedings securely via Wi-Fi or Bluetooth. Direct download for Android.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#download" class="flex items-center justify-center gap-3 px-8 py-4 bg-brand-500 text-white rounded-full font-semibold text-lg hover:bg-brand-600 transition-all shadow-lg shadow-brand-500/30 active:scale-95">
+                            <i class="ph-fill ph-android-logo text-2xl"></i>
+                            Download APK
+                        </a>
+                        <a href="#install" class="flex items-center justify-center gap-3 px-8 py-4 bg-white text-navy-900 border border-slate-200 rounded-full font-semibold text-lg hover:bg-slate-50 transition-all active:scale-95">
+                            Installation Guide
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-500 flex items-center gap-2">
+                        <i class="ph-fill ph-shield-check text-green-500"></i>
+                        Safe & secure direct download. No Play Store required.
+                    </p>
+                </div>
+
+                <!-- CSS Phone Mockup -->
+                <div class="relative mx-auto w-full max-w-[320px] lg:max-w-[360px] animate-float">
+                    <div class="relative rounded-[2.5rem] border-[8px] border-slate-900 bg-slate-900 shadow-2xl overflow-hidden aspect-[9/19.5]">
+                        <!-- Notch -->
+                        <div class="absolute top-0 inset-x-0 h-6 bg-slate-900 rounded-b-3xl w-1/2 mx-auto z-20"></div>
+                        
+                        <!-- App UI Simulation -->
+                        <div class="absolute inset-0 bg-slate-50 flex flex-col pt-8">
+                            <!-- App Bar -->
+                            <div class="bg-brand-500 text-white px-4 py-4 shadow-md flex items-center">
+                                <i class="ph ph-list text-xl"></i>
+                                <span class="mx-auto font-bold">Online Dashboard</span>
+                            </div>
+                            
+                            <!-- Dashboard Content -->
+                            <div class="p-4 flex flex-col gap-4 flex-1 overflow-hidden">
+                                <!-- Status Card -->
+                                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                                    <div class="text-xs text-slate-500 mb-1">Machine ID: ESP-8A2F</div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                        <span class="font-bold text-green-600 text-sm">ONLINE</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Feed Card -->
+                                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <div class="flex items-center gap-2">
+                                            <i class="ph-fill ph-package text-brand-500 text-xl"></i>
+                                            <span class="font-bold text-slate-700">Hopper Level</span>
+                                        </div>
+                                        <span class="font-bold text-slate-800 text-lg">5.0 kg</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden">
+                                        <div class="bg-green-500 h-full w-1/2 rounded-full"></div>
+                                    </div>
+                                    <div class="text-center mt-2 text-sm font-bold text-slate-700">50% Full</div>
+                                </div>
+
+                                <!-- Water Card -->
+                                <div class="bg-blue-50 p-4 rounded-2xl shadow-sm border border-blue-100 flex flex-col items-center justify-center py-6">
+                                    <i class="ph-fill ph-drop text-blue-500 text-3xl mb-2"></i>
+                                    <span class="font-bold text-blue-900">Water Level Optimal</span>
+                                </div>
+
+                                <!-- Stop Button -->
+                                <div class="mt-auto bg-red-500 text-white rounded-xl py-3 flex items-center justify-center gap-2 font-bold shadow-md">
+                                    <i class="ph-fill ph-stop-circle text-xl"></i>
+                                    EMERGENCY STOP
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative elements behind phone -->
+                    <div class="absolute -z-10 top-1/2 right-[-20%] w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob"></div>
+                    <div class="absolute -z-10 bottom-10 left-[-20%] w-32 h-32 bg-brand-400 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-2000"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-500 font-semibold tracking-wide uppercase text-sm mb-2">Capabilities</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Hardware Meets Software</h3>
+                <p class="text-slate-600 text-lg">Designed specifically for our custom ESP32 Feeder Hardware. The app provides a seamless bridge between your phone and your farm.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-brand-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-fill ph-crosshair"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Laser Precision</h4>
+                    <p class="text-slate-600 leading-relaxed">Integrated VL53L0X laser sensor support accurately measures the physical distance of your feed to calculate exact kilogram weights.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-blue-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-fill ph-drop"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Water Monitoring</h4>
+                    <p class="text-slate-600 leading-relaxed">Never let your flock go thirsty. Real-time monitoring of water reservoirs with instant push notifications when empty.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-purple-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-fill ph-calendar-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Automated Schedules</h4>
+                    <p class="text-slate-600 leading-relaxed">Set up complex daily feeding schedules. The ESP32 stores them locally on its RTC, meaning it feeds even if the internet drops.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-indigo-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-fill ph-broadcast"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Dual Connectivity</h4>
+                    <p class="text-slate-600 leading-relaxed">No Wi-Fi at the coop? No problem. Connect locally via Bluetooth (BLE) to configure settings or dispense feed manually.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-green-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-fill ph-chart-line-up"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Cloud Analytics</h4>
+                    <p class="text-slate-600 leading-relaxed">Powered by Firebase. View historical feeding data, monitor consumption trends, and forecast when you need to buy more feed.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm text-red-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph-fill ph-warning-octagon"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Emergency Control</h4>
+                    <p class="text-slate-600 leading-relaxed">Instantly halt the motorized auger from anywhere in the world with the red Emergency Stop button.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Guide -->
+    <section id="install" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-500 font-semibold tracking-wide uppercase text-sm mb-2">Setup Guide</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">How to Install the APK</h3>
+                <p class="text-slate-400">Because this app interfaces with custom farm hardware, it is distributed directly rather than through the Google Play Store. Follow these steps to install.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Step 1 -->
+                <div class="flex gap-6 bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+                    <div class="w-12 h-12 shrink-0 bg-brand-500 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Download the File</h4>
+                        <p class="text-slate-400">Tap the orange Download button below to save the <code class="bg-slate-900 px-2 py-1 rounded text-brand-400 text-sm">smart-feeder-v1.0.apk</code> file to your Android device.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex gap-6 bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+                    <div class="w-12 h-12 shrink-0 bg-brand-500 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Allow Unknown Sources</h4>
+                        <p class="text-slate-400">Open the downloaded file. Android may show a security prompt. Tap <strong>Settings</strong> and toggle on <strong>"Allow from this source"</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex gap-6 bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+                    <div class="w-12 h-12 shrink-0 bg-brand-500 rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Install & Connect</h4>
+                        <p class="text-slate-400">Tap <strong>Install</strong>. Once finished, open the app, create an account, and use the "Connect Locally" button to pair your ESP32 hardware via Bluetooth for the first time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section id="download" class="py-24 bg-brand-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <i class="ph-duotone ph-cloud-arrow-down text-7xl text-brand-500 mb-6"></i>
+            <h2 class="text-4xl font-bold text-navy-900 mb-6">Ready to automate your farm?</h2>
+            <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">Get the latest version of the Smart Feeder app. Requires Android 8.0 or newer and an active internet connection for initial Firebase setup.</p>
+            
+            <!-- Replace 'smart_feeder_app.apk' with the actual path to your APK file when hosting -->
+            <a href="smart_feeder_app.apk" download class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-brand-500 text-white rounded-full font-bold text-xl hover:bg-brand-600 hover:-translate-y-1 transition-all shadow-xl shadow-brand-500/30">
+                <i class="ph-fill ph-download-simple text-2xl"></i>
+                Download Smart Feeder APK
+                <span class="text-sm font-normal opacity-80 border-l border-white/20 pl-3 ml-1">v1.0 (51.6 MB)</span>
+            </a>
+            
+            <p class="mt-6 text-sm text-slate-500">By downloading, you agree to the Terms of Service. Designed exclusively for custom ESP32 hardware.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white">
+                    <i class="ph-bold ph-barn text-lg"></i>
+                </div>
+                <span class="font-bold text-lg text-navy-900">Smart Feeder</span>
+            </div>
+            
+            <p class="text-slate-500 text-sm text-center md:text-left">
+                &copy; <span id="year"></span> Smart Feeder Systems. All rights reserved.<br>
+                Powered by Flutter, Firebase, and ESP32.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-sm');
+                nav.classList.replace('bg-white/70', 'bg-white/90');
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.classList.replace('bg-white/90', 'bg-white/70');
+            }
+        });
+    </script>
+</body>
+</html>
